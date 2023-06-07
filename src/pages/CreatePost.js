@@ -29,7 +29,7 @@ Yup.object().shape({
 })
 
 const onSubmit = (data) =>{   
-axios.post("http://localhost:3001/posts", data, { headers: {accessToken: localStorage.getItem('accessToken')}}).then((response)=>{
+axios.post("https://full-stack-api-homero.herokuapp.com/posts", data, { headers: {accessToken: localStorage.getItem('accessToken')}}).then((response)=>{
     navigate('/');
 })
 }

@@ -25,7 +25,7 @@ status: false,
 
 
 useEffect(() => {
-axios.get('http://localhost:3001/auth/auth', {
+axios.get('https://full-stack-api-homero.herokuapp.com/auth/auth', {
   headers: {
     accessToken: localStorage.getItem("accessToken"),
   },

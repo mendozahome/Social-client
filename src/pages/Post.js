@@ -21,19 +21,19 @@ const { authState} = useContext(AuthContext);
 const navigate = useNavigate();
 
 useEffect(()=>{
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response)=>{
+    axios.get(`https://full-stack-api-homero.herokuapp.com/posts/byId/${id}`).then((response)=>{
 setPostObject(response.data);
 })
 } , [])
 
 useEffect(()=>{
-  axios.get(`http://localhost:3001/comments/${id}`).then((response)=>{
+  axios.get(`https://full-stack-api-homero.herokuapp.com/comments/${id}`).then((response)=>{
 setComments(response.data);
 })
 }, [])
 
 const addComment = () =>{
-  axios.post("http://localhost:3001/comments", {
+  axios.post("https://full-stack-api-homero.herokuapp.com/comments", {
     
   
   commentBody: newComment , 
@@ -56,7 +56,7 @@ const addComment = () =>{
 }
 
 const deleteComment = (id) =>{
-axios.delete(`http://localhost:3001/comments/${id}`, {
+axios.delete(`https://full-stack-api-homero.herokuapp.com/comments/${id}`, {
   headers: {accessToken: localStorage.getItem("accessToken")},
 }).then (() => {
   setComments(comments.filter((val) =>{
@@ -66,7 +66,7 @@ axios.delete(`http://localhost:3001/comments/${id}`, {
 }
 
 const deletePost = (id) =>{
-axios.delete(`http://localhost:3001/posts/${id}`, {
+axios.delete(`https://full-stack-api-homero.herokuapp.com/posts/${id}`, {
   headers: {accessToken: localStorage.getItem("accessToken")},
 }).then(()=>{
   navigate('/');
@@ -76,14 +76,14 @@ axios.delete(`http://localhost:3001/posts/${id}`, {
 const editPost = (option) => {
 if (option === "title"){
 let newTitle = prompt("Enter New Title:");
-axios.put("http://localhost:3001/posts/title", {newTitle:newTitle, id: id,},
+axios.put("https://full-stack-api-homero.herokuapp.com/posts/title", {newTitle:newTitle, id: id,},
 {
   headers: {accessToken: localStorage.getItem("accessToken")}
 });
 setPostObject({...postObject, title: newTitle})
 }else{
   let newPostText = prompt("Enter New Text:");
-  axios.put("http://localhost:3001/posts/postText", {newText:newPostText, id: id,},
+  axios.put("https://full-stack-api-homero.herokuapp.com/posts/postText", {newText:newPostText, id: id,},
 {
   headers: {accessToken: localStorage.getItem("accessToken")}
 });
