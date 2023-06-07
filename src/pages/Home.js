@@ -19,7 +19,7 @@ useEffect(() => {
   if (!localStorage.getItem("accessToken")){
     navigate("/login");
   }else{
-axios.get("https://full-stack-api-homero.herokuapp.com/posts",
+axios.get("http://localhost:3001/posts",
 { headers: { accessToken: localStorage.getItem("accessToken")} }
 ).then((response)=>{
 setListOfPosts(response.data.listOfPosts);
@@ -30,7 +30,7 @@ setLikedPosts(response.data.likedPosts.map((like) => {return like.PostId; }));
 },[])
 
 const likeAPost = (postId) =>{
-axios.post("https://full-stack-api-homero.herokuapp.com/likes", 
+axios.post("http://localhost:3001/likes", 
 { PostId: postId }, 
 { headers: { accessToken: localStorage.getItem("accessToken")} })
 .then((response)=>{

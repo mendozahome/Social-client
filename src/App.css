@@ -279,3 +279,20 @@ button {
 .loginContainer input {
   border: 2px solid dodgerblue;
 }
+
+
+@media only screen and (max-width: 1000px) {
+.postPage {
+  display: flex;
+  flex-direction: column;
+ 
+}
+#individual {
+  height: 300px;
+  width: 400px;
+}
+#individual .body {
+  font-size: 20px;
+}
+
+}
