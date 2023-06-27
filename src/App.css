@@ -126,6 +126,10 @@ span {
   color: red;
 }
 
+.testinfo{
+  color:black;
+  font-size: 12px;
+}
 /* NAVBAR */
 
 .navbar {
