@@ -38,7 +38,7 @@ axios.post("https://full-stack-api-homero.herokuapp.com/auth/login", data).then(
         }}/>
 
         <button onClick={login}>Login</button>
-        {localStorage.setItem("accessToken") &&
+        {setAuthState &&
         <div className='testinfo'>
     For no registration<br></br>
     username: homero@mail.com <br></br>
